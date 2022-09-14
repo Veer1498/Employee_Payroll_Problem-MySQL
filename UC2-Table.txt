@@ -1,0 +1,25 @@
+//UC2
+
+CREATE TABLE employee_payroll(
+id int auto_increment primary key,
+name varchar(150) not null,
+salary int not null,
+startdata int not null
+)
+
+// OUTPUT
+=========
+mysql> use payroll_service;
+Database changed
+mysql> DESCRIBE employee_payroll;
++-----------+--------------+------+-----+---------+----------------+
+| Field     | Type         | Null | Key | Default | Extra          |
++-----------+--------------+------+-----+---------+----------------+
+| id        | int          | NO   | PRI | NULL    | auto_increment |
+| name      | varchar(150) | NO   |     | NULL    |                |
+| salary    | int          | NO   |     | NULL    |                |
+| startdata | int          | NO   |     | NULL    |                |
++-----------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql>

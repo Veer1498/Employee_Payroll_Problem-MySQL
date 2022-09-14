@@ -1,0 +1,11 @@
+UC7
+===
+
+
+mysql> SELECT SUM(salary) FROM employee_payroll where gender = 'F' group by gender;
++-------------+
+| SUM(salary) |
++-------------+
+|      100000 |
++-------------+
+1 row in set (0.04 sec)

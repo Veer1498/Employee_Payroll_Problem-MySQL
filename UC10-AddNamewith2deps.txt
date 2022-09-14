@@ -1,0 +1,46 @@
+UC10
+=====
+
+mysql> insert into employee_payroll values(7,'Terissa',45000,12022022,'F',646343,'London','Sales',10000,5000,4000,2000,12000);
+Query OK, 1 row affected (0.13 sec)
+
+mysql> insert into employee_payroll values(8,'Terissa',45000,12022022,'F',646343,'Marketing','Sales',10000,5000,4000,2000,12000);
+Query OK, 1 row affected (0.15 sec)
+
+mysql> select * from employee_payroll;
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+| id | name      | salary | startdata | gender | phone    | address    | department  | basicpay | deductions | taxablepay | incometax | netpay |
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+|  1 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |    10000 |       4000 |       6000 |      9000 |  15000 |
+|  2 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |     5000 |       3000 |       7000 |      3000 |  12000 |
+|  3 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |     9000 |       8000 |       9000 |      6000 |  18000 |
+|  4 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |    10000 |       4000 |       6000 |      9000 |  15000 |
+|  5 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |     5000 |       3000 |       7000 |      3000 |  12000 |
+|  6 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |     9000 |       8000 |       9000 |      6000 |  18000 |
+|  7 | Terissa   |  45000 |  12022022 | F      |   646343 | London     | Sales       |    10000 |       5000 |       4000 |      2000 |  12000 |
+|  8 | Terissa   |  45000 |  12022022 | F      |   646343 | Marketing  | Sales       |    10000 |       5000 |       4000 |      2000 |  12000 |
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+8 rows in set (0.00 sec)
+
+===========================================================================================
+
+mysql> update employee_payroll set address='London',department='Marketing' where address='Marketing';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+| id | name      | salary | startdata | gender | phone    | address    | department  | basicpay | deductions | taxablepay | incometax | netpay |
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+|  1 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |    10000 |       4000 |       6000 |      9000 |  15000 |
+|  2 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |     5000 |       3000 |       7000 |      3000 |  12000 |
+|  3 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |     9000 |       8000 |       9000 |      6000 |  18000 |
+|  4 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |    10000 |       4000 |       6000 |      9000 |  15000 |
+|  5 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |     5000 |       3000 |       7000 |      3000 |  12000 |
+|  6 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |     9000 |       8000 |       9000 |      6000 |  18000 |
+|  7 | Terissa   |  45000 |  12022022 | F      |   646343 | London     | Sales       |    10000 |       5000 |       4000 |      2000 |  12000 |
+|  8 | Terissa   |  45000 |  12022022 | F      |   646343 | London     | Marketing   |    10000 |       5000 |       4000 |      2000 |  12000 |
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+8 rows in set (0.00 sec)
+
+mysql>

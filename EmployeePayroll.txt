@@ -1,4 +1,4 @@
-//UC1-Create a Database 
+//UC1-Create a Database for Payroll Service
 =======================
 
 create database payroll_Service;

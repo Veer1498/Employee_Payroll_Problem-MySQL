@@ -1,0 +1,49 @@
+UC8-Add Some more details
+=========================
+
+mysql> alter table employee_payroll add phone int not null, add address varchar(150) not null, add department varchar(150) not null;
+Query OK, 0 rows affected (0.21 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_payroll set address = 'Lucknow';
+Query OK, 6 rows affected (0.18 sec)
+Rows matched: 6  Changed: 6  Warnings: 0
+
+mysql> update employee_payroll set address = 'Andhra' where name = 'Veerendra';
+Query OK, 2 rows affected (0.04 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set address = 'Karnataka' where name = 'Priya';
+Query OK, 2 rows affected (0.11 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set address = 'Maharastra' where name = 'Prakash';
+Query OK, 2 rows affected (0.11 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set phone = 37463643,department = 'Development' where name = 'Prakash';
+Query OK, 2 rows affected (0.03 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set phone = 8743455,department = 'Testing' where name = 'Priya';
+Query OK, 2 rows affected (0.11 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set phone = 78578345,department = 'Database' where name = 'Veerendra';
+Query OK, 2 rows affected (0.10 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from employee_payroll ;
++----+-----------+--------+-----------+--------+----------+------------+-------------+
+| id | name      | salary | startdata | gender | phone    | address    | department  |
++----+-----------+--------+-----------+--------+----------+------------+-------------+
+|  1 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |
+|  2 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |
+|  3 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |
+|  4 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |
+|  5 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |
+|  6 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |
++----+-----------+--------+-----------+--------+----------+------------+-------------+
+6 rows in set (0.00 sec)
+
+mysql>

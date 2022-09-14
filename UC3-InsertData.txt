@@ -1,0 +1,8 @@
+//UC3
+
+insert into employee_payroll(name,salary,startdata) values
+('Veerendra', 100000, 14041998),
+('Priya', 50000, 10081997),
+('Prakash', 70000, 20051997);
+
+//data Added

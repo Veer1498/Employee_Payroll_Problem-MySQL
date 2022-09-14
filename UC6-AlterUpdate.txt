@@ -1,0 +1,40 @@
+UC6
+====
+
+mysql> ALTER TABLE employee_payroll ADD gender varchar(10);
+Query OK, 0 rows affected (0.35 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> UPDATE employee_payroll set gender = 'M' where name = 'Veerendra' or name = 'Prakash';
+Query OK, 4 rows affected (0.16 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-----------+--------+-----------+--------+
+| id | name      | salary | startdata | gender |
++----+-----------+--------+-----------+--------+
+|  1 | Veerendra | 100000 |  14041998 | M      |
+|  2 | Priya     |  50000 |  10081997 | NULL   |
+|  3 | Prakash   |  70000 |  20051997 | M      |
+|  4 | Veerendra | 100000 |  14041998 | M      |
+|  5 | Priya     |  50000 |  10081997 | NULL   |
+|  6 | Prakash   |  70000 |  20051997 | M      |
++----+-----------+--------+-----------+--------+
+6 rows in set (0.00 sec)
+
+mysql> UPDATE employee_payroll set gender = 'F' where name = 'Priya';
+Query OK, 2 rows affected (0.11 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-----------+--------+-----------+--------+
+| id | name      | salary | startdata | gender |
++----+-----------+--------+-----------+--------+
+|  1 | Veerendra | 100000 |  14041998 | M      |
+|  2 | Priya     |  50000 |  10081997 | F      |
+|  3 | Prakash   |  70000 |  20051997 | M      |
+|  4 | Veerendra | 100000 |  14041998 | M      |
+|  5 | Priya     |  50000 |  10081997 | F      |
+|  6 | Prakash   |  70000 |  20051997 | M      |
++----+-----------+--------+-----------+--------+
+6 rows in set (0.00 sec)

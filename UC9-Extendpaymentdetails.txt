@@ -1,0 +1,33 @@
+UC9-Add Some More
+=================
+
+mysql> alter table employee_payroll add basicpay int not null, add deductions int not null, add taxablepay int not null, add incometax int not null, add netpay int not null;
+Query OK, 0 rows affected (0.12 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> update employee_payroll set basicpay=10000,deductions=4000,taxablepay=6000,incometax=9000,netpay=15000 where name = 'Veerendra';
+Query OK, 2 rows affected (0.11 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set basicpay=5000,deductions=3000,taxablepay=7000,incometax=3000,netpay=12000 where name = 'Priya';
+Query OK, 2 rows affected (0.13 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> update employee_payroll set basicpay=9000,deductions=8000,taxablepay=9000,incometax=6000,netpay=18000 where name = 'Prakash';
+Query OK, 2 rows affected (0.04 sec)
+Rows matched: 2  Changed: 2  Warnings: 0
+
+mysql> select * from employee_payroll;
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+| id | name      | salary | startdata | gender | phone    | address    | department  | basicpay | deductions | taxablepay | incometax | netpay |
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+|  1 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |    10000 |       4000 |       6000 |      9000 |  15000 |
+|  2 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |     5000 |       3000 |       7000 |      3000 |  12000 |
+|  3 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |     9000 |       8000 |       9000 |      6000 |  18000 |
+|  4 | Veerendra | 100000 |  14041998 | M      | 78578345 | Andhra     | Database    |    10000 |       4000 |       6000 |      9000 |  15000 |
+|  5 | Priya     |  50000 |  10081997 | F      |  8743455 | Karnataka  | Testing     |     5000 |       3000 |       7000 |      3000 |  12000 |
+|  6 | Prakash   |  70000 |  20051997 | M      | 37463643 | Maharastra | Development |     9000 |       8000 |       9000 |      6000 |  18000 |
++----+-----------+--------+-----------+--------+----------+------------+-------------+----------+------------+------------+-----------+--------+
+6 rows in set (0.00 sec)
+
+mysql>
