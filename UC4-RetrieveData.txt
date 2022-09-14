@@ -1,20 +1,24 @@
-UC4
+UC5
 ===
-mysql> SELECT * FROM employee_payroll;
 
 
-OUTPUT
-=======
+mysql> SELECT salary FROM employee_payroll
+    -> WHERE name = 'Veerendra';
++--------+
+| salary |
++--------+
+| 100000 |
+| 100000 |
++--------+
+2 rows in set (0.00 sec)
 
+======================================================================
 
+mysql> SELECT * FROM employee_payroll WHERE startdata = 14041998;
 +----+-----------+--------+-----------+
 | id | name      | salary | startdata |
 +----+-----------+--------+-----------+
 |  1 | Veerendra | 100000 |  14041998 |
-|  2 | Priya     |  50000 |  10081997 |
-|  3 | Prakash   |  70000 |  20051997 |
 |  4 | Veerendra | 100000 |  14041998 |
-|  5 | Priya     |  50000 |  10081997 |
-|  6 | Prakash   |  70000 |  20051997 |
 +----+-----------+--------+-----------+
-6 rows in set (0.00 sec)
+2 rows in set (0.00 sec)
