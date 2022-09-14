@@ -1,0 +1,31 @@
+//UC1-Create a Database 
+=======================
+
+create database payroll_Service;
+show databases;
+use payroll_service;
+
+
+OUTPUT
+======
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| payroll_service    |
+| performance_schema |
+| sakila             |
+| sampledatabase     |
+| sampledatabase2    |
+| sys                |
+| veerdata           |
+| world              |
++--------------------+
+10 rows in set (0.02 sec)
+
+mysql> use payroll_service;
+Database changed
+mysql>
