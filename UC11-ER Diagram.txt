@@ -1,0 +1,87 @@
+UC-11- ER Diagram
+=================
+
+
+
+
+mysql> create table Company(
+    -> company_name varchar(20) not null,
+    -> id int not null,
+    -> primary key(company_name),
+    -> foreign key(id) references employee_payroll(id)
+    -> );
+Query OK, 0 rows affected (0.32 sec)
+
+mysql> describe Company;
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| company_name | varchar(20) | NO   | PRI | NULL    |       |
+| id           | int         | NO   | MUL | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql>
+
+
+mysql> create table dept(
+    -> dept_id int not null,
+    -> dept_name varchar(50) not null,
+    -> id int not null,
+    -> primary key(dept_id),
+    -> foreign key(id) references employee_payroll(id)
+    -> );
+Query OK, 0 rows affected (1.53 sec)
+
+mysql> create table Payroll(
+    -> payroll_id int not null,
+    -> salary int not null,
+    -> id int not null,
+    -> primary key(payroll_id),
+    -> foreign key(id) references employee_payroll(id)
+    -> );
+Query OK, 0 rows affected (0.43 sec)
+
+mysql> describe payroll_service;
+ERROR 1146 (42S02): Table 'payroll_service.payroll_service' doesn't exist
+mysql> describe employee_payroll;
++------------+--------------+------+-----+---------+----------------+
+| Field      | Type         | Null | Key | Default | Extra          |
++------------+--------------+------+-----+---------+----------------+
+| id         | int          | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(150) | NO   |     | NULL    |                |
+| salary     | int          | NO   |     | NULL    |                |
+| startdata  | int          | NO   |     | NULL    |                |
+| gender     | varchar(10)  | YES  |     | NULL    |                |
+| phone      | int          | NO   |     | NULL    |                |
+| address    | varchar(150) | NO   |     | NULL    |                |
+| department | varchar(150) | NO   |     | NULL    |                |
+| basicpay   | int          | NO   |     | NULL    |                |
+| deductions | int          | NO   |     | NULL    |                |
+| taxablepay | int          | NO   |     | NULL    |                |
+| incometax  | int          | NO   |     | NULL    |                |
+| netpay     | int          | NO   |     | NULL    |                |
++------------+--------------+------+-----+---------+----------------+
+13 rows in set (0.21 sec)
+
+mysql> describe Payroll;
++------------+------+------+-----+---------+-------+
+| Field      | Type | Null | Key | Default | Extra |
++------------+------+------+-----+---------+-------+
+| payroll_id | int  | NO   | PRI | NULL    |       |
+| salary     | int  | NO   |     | NULL    |       |
+| id         | int  | NO   | MUL | NULL    |       |
++------------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> describe dept;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| dept_id   | int         | NO   | PRI | NULL    |       |
+| dept_name | varchar(50) | NO   |     | NULL    |       |
+| id        | int         | NO   | MUL | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+3 rows in set (0.10 sec)
+
+mysql>
